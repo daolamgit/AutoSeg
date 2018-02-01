@@ -11,6 +11,8 @@ from keras.optimizers import Adam
 
 from keras.models import load_model
 
+from AutoSeg.Models.metrics import * #for load model
+
 import h5py
 
 class Unet25( object):
@@ -84,7 +86,7 @@ class Unet25( object):
             score_train /= len( training_paths)
 
             #####Valiation after each epoch#######
-            if self.testing_gt_available and np.mod( epoch, 1) == 0:
+            if self.testing_gt_available and np.mod( epoch, 10) == 0:
                 score_val = 0
                 for j in range(len(self.testing_paths)):
                     print "Validating: ", self.testing_paths[j]
@@ -117,19 +119,21 @@ class Unet25( object):
 
         #load model
         filepath = os.path.join( self.checking_dir, self.roi[1], self.test_model_name)
-        self.model = load_model( filepath)
+        self.model = load_model( filepath,
+                    custom_objects={'cross_entropy_weighted_loss_by_samples': cross_entropy_weighted_loss_by_samples,
+                                    'volume_accuracy': volume_accuracy})
 
         #test model
         for j in range( len( self.testing_paths)):
             print "Testing: ", self.testing_paths[j]
             pt_test = hdf5image.Patient_Test( self.testing_paths[j], self.roi[0], self.im_size)
 
-            Masks   = self.one_patient_predict( pt_test)
+            Masks_prob   = self.one_patient_predict( pt_test)
 
             #save Masks as hdf5
             filepath = self.testing_paths[j] + '.mask'
             hdf5 = h5py.File(filepath, 'w')
-            hdf5.create_dataset('Masks_predict', data=Masks)
+            hdf5.create_dataset('Masks_predict', data=Masks_prob)
 
 
     def one_patient_predict(self, pt):
@@ -137,7 +141,7 @@ class Unet25( object):
         Hyper_volume = (Hyper_volume - self.mean) / self.std
 
         Size        = Hyper_volume.shape
-        Masks       = np.zeros( (Size[0], Size[2], Size[3]))
+        Masks       = np.zeros( (Size[0], self.nclass, Size[2], Size[3]))
         B = len(Hyper_volume) // BATCH_SIZE
 
         for b in range( B):
@@ -147,7 +151,7 @@ class Unet25( object):
             # the remainder probably doesn;t matter but
         if np.mod(len(Hyper_volume), BATCH_SIZE):
             volumes = Hyper_volume[B * BATCH_SIZE:]
-            Masks[B * BATCH_SIZE:] = pt.Masks_augmentation[B * BATCH_SIZE:]
+            Masks[B * BATCH_SIZE:] = self.model.predict_on_batch( volumes)
 
         return Masks
 

@@ -1,13 +1,14 @@
 from AutoSeg.Learner.learner import *
 import os
 import pickle
+import glob
 
 from AutoSeg.Dicom.image_constants import *
 import imp
 
 #learner = Unet25('','','','','','','','')
 FLAGS_train             = 0
-FLAGS_train_data_dir    = 'aapm_journal_localtest/Small/Hdf5/test'
+FLAGS_train_data_dir    = 'aapm_journal_localtest/Small/Hdf5/train'
 FLAGS_test_data_dir     = 'aapm_journal_localtest/Small/Hdf5/test'
 FLAGS_checkpoint_dir    = 'checkpoint'
 FLAGS_log_dir           = 'logs'
@@ -15,9 +16,8 @@ FLAGS_log_dir           = 'logs'
 def main():
 
     #setup training, testing list
-    if FLAGS_train_data_dir == FLAGS_test_data_dir: #training with 2/3 slit
+    if FLAGS_train_data_dir == FLAGS_test_data_dir: #training with 2/3, validation with 1/3
         testing_gt_available = True
-        a = a*2
         if os.path.exists( os.path.join( FLAGS_train_data_dir, 'files.log')):
             with open( os.path.join( FLAGS_train_data_dir, 'files.log'), 'r') as f:
                 training_paths, testing_paths = pickle.load(f)
@@ -29,8 +29,12 @@ def main():
             with open( os.path.join( FLAGS_train_data_dir, 'files.log'), 'w') as f:
                 pickle.dump( [training_paths, testing_paths], f)
 
-    else: #train and test together, not recommend
-        raise ValueError ('Not recommend for prototype because train and test together is waste of time')
+    else:
+        if not FLAGS_train:
+            training_paths  = [ name for name in glob.glob( os.path.join( FLAGS_train_data_dir, '*.hdf5'))]
+            testing_paths   = [ name for name in glob.glob( os.path.join( FLAGS_test_data_dir, '*.hdf5'))]
+        else: #train and test together, not recommend
+            raise ValueError ('Not recommend for prototype because train and test together is at the submission only')
 
     if not os.path.exists( FLAGS_checkpoint_dir):
         os.makedirs(FLAGS_checkpoint_dir)

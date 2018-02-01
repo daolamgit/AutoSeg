@@ -89,39 +89,6 @@ def BNA(_input):
     return ELU()(inputs_norm)
 
 
-def reduction_a(inputs, k=64, l=64, m=96, n=96):
-    "35x35 -> 17x17"
-    inputs_norm = BNA(inputs)
-    pool1 = MaxPooling2D((3, 3), strides=(2, 2), padding='same')(inputs_norm)
-
-    conv2 = Conv2D(n, (3, 3), strides=(2, 2), padding='same')(inputs_norm)
-
-    conv3_1 = NConv2D(k, (1, 1), strides=(1, 1), padding='same')(inputs_norm)
-    conv3_2 = NConv2D(l, (3, 3), strides=(1, 1), padding='same')(conv3_1)
-    conv3_2 = Conv2D(m, (3, 3), strides=(2, 2), padding='same')(conv3_2)
-
-    res = concatenate([pool1, conv2, conv3_2], concat_axis=1)
-    return res
-
-
-def reduction_b(inputs):
-    "17x17 -> 8x8"
-    inputs_norm = BNA(inputs)
-    pool1 = MaxPooling2D((3, 3), strides=(2, 2), padding='same')(inputs_norm)
-    #
-    conv2_1 = NConv2D(64, (1, 1), strides=(1, 1), padding='same')(inputs_norm)
-    conv2_2 = Conv2D(96, (3, 3), strides=(2, 2), padding='same')(conv2_1)
-    #
-    conv3_1 = NConv2D(64, (1, 1), strides=(1, 1), padding='same')(inputs_norm)
-    conv3_2 = Conv2D(72, (3, 3), strides=(2, 2), padding='same')(conv3_1)
-    #
-    conv4_1 = NConv2D(64, (1, 1), strides=(1, 1), padding='same')(inputs_norm)
-    conv4_2 = NConv2D(72, (3, 3), strides=(1, 1), padding='same')(conv4_1)
-    conv4_3 = Conv2D(80, (3, 3), strides=(2, 2), padding='same')(conv4_2)
-    #
-    res = concatenate([pool1, conv2_2, conv3_2, conv4_3], concat_axis=1)
-    return res
-
 
 def get_unet_inception_mod(optimizer):
     splitted = True
@@ -186,7 +153,7 @@ def get_unet_inception_mod(optimizer):
 
     model = Model(inputs=inputs, outputs=[conv10])
     model.compile(optimizer=optimizer,
-                  loss={'main_output': cross_entropy_weighted_loss},
+                  loss={'main_output': cross_entropy_weighted_loss_by_samples},
                   metrics={'main_output': volume_accuracy},
                   loss_weights={'main_output': 1.})
 

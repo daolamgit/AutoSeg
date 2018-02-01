@@ -52,7 +52,7 @@ class Patient_Train(object):
             final_labels = np.empty((im_size[0], nclass, im_size[1], im_size[2]), dtype=np.float32)
             for z in range( 1, nclass):
                 temp = warp( (self.Masks_resize == z).astype( np.float32), warp_coords)
-                temp[ temp < .5] = 0;
+                temp[ temp < .5] = 0
                 temp[ temp >= .5] = 1
                 final_labels[:,z] = temp
 
