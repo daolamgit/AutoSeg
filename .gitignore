@@ -2,3 +2,4 @@
 *.hdf5.mask
 *.hdf5.mask.labels
 /checkpoint/
+aapm_journal_localtest/
