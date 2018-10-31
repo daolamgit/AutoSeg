@@ -76,23 +76,42 @@ class Unet25( object):
             training_paths = np.random.permutation( self.training_paths)
 
             score_train = 0
+            score_ent = 0
             for i in range( len( training_paths)):
                 print "Training: ", training_paths[i]
-                pt_train  = hdf5image.Patient_Train( training_paths[i], self.roi[0], self.im_size)
-                score_train += self.one_patient_train( pt_train, FLAGS_train= True)
-
+                pt_train  = hdf5image.Patient_Train( training_paths[i], self.roi[0], self.im_size) #roi[0] notifies site to train, roi[1] string value
+                score_ent1, score_train1    = self.one_patient_train( pt_train, FLAGS_train= True)
+                score_train     += score_train1
+                score_ent       += score_ent1
+                print score_ent1, score_train1
                 counter += 1
 
-            score_train /= len( training_paths)
+            score_train /= len(training_paths)
+            score_ent   /= len(training_paths)
+            print "Epoch score train is ", score_ent, score_train
+            with open('train.txt', 'a') as file_train:
+                file_train.write('%f, %f\n' % (score_ent, score_train))
 
             #####Valiation after each epoch#######
             if self.testing_gt_available and np.mod( epoch, 10) == 0:
                 score_val = 0
+                score_ent = 0
                 for j in range(len(self.testing_paths)):
                     print "Validating: ", self.testing_paths[j]
                     #testing_paths = np.random.permutation(( self.testing_paths))
                     pt_val = hdf5image.Patient_Train( self.testing_paths[j], self.roi[0], self.im_size)
-                    score_val += self.one_patient_train( pt_val, FLAGS_train=False)
+                    score_ent1, score_val1 = self.one_patient_train( pt_val, FLAGS_train=False)
+                    score_val  += score_val1
+                    score_ent  += score_ent1
+
+                    print score_ent1, score_val1
+
+                score_val /= len( self.testing_paths)
+                score_ent /= len( self.testing_paths)
+                print "Epoch score validation is ", score_ent, score_val
+
+                with open('validation.txt', 'a') as file_val:
+                    file_val.write('%f, %f\n' % (score_ent, score_val))
 
                 if score_val > self.best_val_score: #save the current best model
                      model_name = "best_val_score_model.hdf5"
@@ -135,6 +154,9 @@ class Unet25( object):
             hdf5 = h5py.File(filepath, 'w')
             hdf5.create_dataset('Masks_predict', data=Masks_prob)
 
+            # contours = self.create_contours( Masks_prob)
+            # rs_c    = RS_Create( pt_test.info, )
+
 
     def one_patient_predict(self, pt):
         Hyper_volume = pt.Hyper_volume
@@ -170,19 +192,20 @@ class Unet25( object):
         # get a batch of batch from Hyper_volume
         B = len(Hyper_volume) // BATCH_SIZE
         score_acc = 0 #one_patient acc_score
-        score_loss = 0 #one_patient loss score
+        score_ent = 0 #one_patient loss score
 
         for b in range( B):
             volumes     = Hyper_volume[b * BATCH_SIZE: (b + 1)*BATCH_SIZE]
             labels      = pt.Masks_augmentation[b * BATCH_SIZE: (b + 1) * BATCH_SIZE]
 
             if FLAGS_train:
-                res = self.model.train_on_batch(volumes, labels)  # call sequentially
+                res = self.model.train_on_batch(volumes, labels)  # call sequentially, how to have weights?
             else:
                 res = self.model.test_on_batch(volumes, labels)
 
+            score_ent += res[0]
             score_acc += res[1] # used metric as score not loss
-            print "Batch:", b, "Res: ", res
+            #print "Batch:", b, "Res: ", res
 
         #the remainder probably doesn;t matter but
         if np.mod( len(Hyper_volume), BATCH_SIZE):
@@ -192,10 +215,10 @@ class Unet25( object):
                 res = self.model.train_on_batch(volumes, labels)  # call sequentially
             else:
                 res = self.model.test_on_batch(volumes, labels)
-            print "Batch:", B, "Res: ", res
+            #print "Batch:", B, "Res: ", res
             #score_acc += res[1]
 
-        return score_acc /B
+        return (score_ent/B, score_acc /B)
 
     def estimate_mean_std(self):
         '''

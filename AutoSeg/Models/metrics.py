@@ -6,8 +6,11 @@ import numpy as np
 # N_CLASSES = 2
 # RE_SIZE = 2
 
-from ..Dicom.image_constants import *
-from ..Learner.learner_constants import *
+# from ..Dicom.image_constants import *
+# from ..Learner.learner_constants import *
+
+from AutoSeg.Dicom.image_constants import *
+from AutoSeg.Learner.learner_constants import *
 
 def loss_weights( weights):
     '''
@@ -19,6 +22,29 @@ def loss_weights( weights):
     def loss( y_true, y_pred):
         return 1
     return loss
+
+def cross_entropy_densenet_fcn( y_true, y_pred):
+    '''
+    Due to volume output of denset, normal keras won't work, it works if swap channel
+    However a custom never works so far
+    :param y_true:
+    :param y_pred:
+    :return:
+    '''
+
+    # Kt = K.flatten(y_true)
+    # Kp = K.flatten(y_pred)
+    #
+    # Kt = K.reshape(y_true, (1, -1))
+    # Kp = K.reshape( y_pred, (1, -1))
+    # return K.binary_crossentropy( Kt, Kp, from_logits=False)
+    #return K.max(Kt)
+    # return K.maximum( 0., 1.)
+
+    # return K.mean(K.binary_crossentropy( Kt, Kp), axis = -1)
+
+    # return K.mean(K.binary_crossentropy(y_true, y_pred), axis=-1)
+    return K.mean(K.binary_crossentropy(y_true, y_pred, from_logits=True))
 
 def cross_entropy_weighted_loss_by_labels( y_true, y_pred):
     '''
@@ -84,6 +110,21 @@ def cross_entropy_weighted_loss_by_samples( y_true, y_pred):
 
 def volume_accuracy(y_true, y_pred):
     return K.mean( K.equal( K.argmax( y_true, axis= 1), K.argmax( y_pred, axis = 1)))
+
+
+# def volume_accuracy(y_true, y_pred):
+#     '''only labels > 0'''
+#     indices = K.argmax(y_true)> N_CLASSES-2 #only the last 2
+#     # y_t = y_true[indices]
+#     # y_p = y_pred[indices]_
+#     return K.mean( K.equal( K.argmax( y_true[indices], axis= 1), K.argmax( y_pred[indices], axis = 1)))
+
+def dice_coef(y_true, y_pred):
+    smooth = .1
+    y_true_f = K.flatten(y_true)
+    y_pred_f = K.flatten(y_pred)
+    intersection = K.sum(y_true_f * y_pred_f)
+    return (2. * intersection + smooth) / (K.sum(y_true_f) + K.sum(y_pred_f) + smooth)
 
 if __name__ == '__main__':
     uu = np.array( [ [[[1, 0],[0 ,1]],

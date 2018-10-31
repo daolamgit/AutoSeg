@@ -1,8 +1,10 @@
-LOSS_WEIGHTS    = (1.0, 20.0, 1.0, 1.0, 10.0, 30.0)
+# exp 1 LOSS_WEIGHTS    = (1.0, 20.0, 1.0, 1.0, 10.0, 30.0)
 
-EPOCH           = 100
+LOSS_WEIGHTS    = (1.0, 20.0, 2.0, 2.0, 20.0, 40.0)
 
-BATCH_SIZE      = 50
+EPOCH           = 50
+
+BATCH_SIZE      = 2 #small 50
 
 N_EPOCH_CHECK   = 10
 

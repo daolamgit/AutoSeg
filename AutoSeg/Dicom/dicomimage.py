@@ -1,4 +1,4 @@
-import dicom as dicom
+import pydicom as dicom
 import os, glob
 import numpy as np
 from skimage.draw import polygon
@@ -294,13 +294,18 @@ if __name__ == '__main__':
     # output_path_train   = r'C:\Users\dlam\Data\aapm_journal\train'
     # output_path_test    = r'C:\Users\dlam\Data\aapm_journal\test'
 
-    input_path_train    = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_shittest/Small/Dicom'
-    input_path_test     = r'C:\Users\dlam\Data\raw_data_aapm\test offsite'
-    output_path_train   = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_shittest/Small/Hdf5/train'
-    output_path_test    = r'C:\Users\dlam\Data\aapm_journal\test'
+    # input_path_train    = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_shittest/Small/Dicom'
+    # input_path_test     = r'C:\Users\dlam\Data\raw_data_aapm\test offsite'
+    # output_path_train   = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_shittest/Small/Hdf5/train'
+    # output_path_test    = r'C:\Users\dlam\Data\aapm_journal\test'
 
-    FLAGS_train         = 1
-    FLAGS_test          = 0
+    input_path_train    = r'/media/radonc/OS/Users/dlam/Data/raw_data_aapm/train'
+    input_path_test     = r'/media/radonc/OS/Users/dlam/Data/raw_data_aapm/test onsite'
+    output_path_train   = r'/media/radonc/OS/Users/dlam/Data/aapm_journal/train'
+    output_path_test    = r'/media/radonc/OS/Users/dlam/Data/aapm_journal/test_onsite'
+
+    FLAGS_train         = 0
+    FLAGS_test          = 1
 
     if not os.path.exists( output_path_train):
         os.makedirs( output_path_train)
