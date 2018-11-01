@@ -18,8 +18,8 @@ FLAGS_train             = 1
 FLAGS_train_data_dir    = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
 FLAGS_test_data_dir     = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
 
-FLAGS_checkpoint_dir    = 'checkpoint'
-FLAGS_log_dir           = 'logs'
+FLAGS_checkpoint_dir    = 'checkpoint1'
+FLAGS_log_dir           = 'logs1'
 
 def main():
 
