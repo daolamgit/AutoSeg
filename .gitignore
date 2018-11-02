@@ -3,3 +3,4 @@
 *.hdf5.mask.labels
 /checkpoint/
 aapm_journal_localtest/
+.idea/
