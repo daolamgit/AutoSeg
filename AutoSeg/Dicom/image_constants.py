@@ -5,7 +5,7 @@ SLICE_THICKNESS             = 3
 PIXEL_SPACING               = 0.9765625
 INPLANE_SIZE                = 512
 
-RE_SIZE                     = 48 #208 # Resize to 72, 256, 256 then crop to 208
-CROP                        = 8 #24
+RE_SIZE                     = 208#48 #208 # Resize to 72, 256, 256 then crop to 208
+CROP                        = 24#8 #24
 
 N_CLASSES                   = 5
