@@ -93,7 +93,7 @@ class Unet25( object):
                 file_train.write('%f, %f\n' % (score_ent, score_train))
 
             #####Valiation after each epoch#######
-            if self.testing_gt_available and np.mod( epoch, 10) == 0:
+            if self.testing_gt_available and np.mod( epoch, N_EPOCH_VAL) == 0:
                 score_val = 0
                 score_ent = 0
                 for j in range(len(self.testing_paths)):

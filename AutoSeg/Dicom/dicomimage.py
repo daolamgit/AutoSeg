@@ -296,15 +296,15 @@ if __name__ == '__main__':
     #     plt.imshow( pt.Masks_rescale[i])
     #     plt.pause(2)
 
-    # input_path_train    = r'C:\Users\dlam\Data\raw_data_aapm\train'
-    # input_path_test     = r'C:\Users\dlam\Data\raw_data_aapm\test offsite'
-    # output_path_train   = r'C:\Users\dlam\Data\aapm_journal\train'
-    # output_path_test    = r'C:\Users\dlam\Data\aapm_journal\test'
+    input_path_train    = r'../../Data/raw_data_aapm/train'
+    input_path_test     = r'../../Data/raw_data_aapm/train/test offsite'
+    output_path_train   = r'../../Data/Hdf5-channels-last/train'
+    output_path_test    = r'../../Data/Hdf5-channels-last/test'
 
-    input_path_train    = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_test/Small/Dicom/train'
-    input_path_test     = r'C:\Users\dlam\Data\raw_data_aapm\test offsite'
-    output_path_train   = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_test/Small/Hdf5-channel-last/train'
-    output_path_test    = r'C:\Users\dlam\Data\aapm_journal\test'
+    # input_path_train    = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_test/Small/Dicom/train'
+    # input_path_test     = r'C:\Users\dlam\Data\raw_data_aapm\test offsite'
+    # output_path_train   = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_test/Small/Hdf5-channel-last/train'
+    # output_path_test    = r'C:\Users\dlam\Data\aapm_journal\test'
 
     # input_path_train    = r'/media/radonc/OS/Users/dlam/Data/raw_data_aapm/train'
     # input_path_test     = r'/media/radonc/OS/Users/dlam/Data/raw_data_aapm/test onsite'

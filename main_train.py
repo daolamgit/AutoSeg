@@ -10,6 +10,15 @@ from keras_contrib.applications.densenet import DenseNetFCN
 
 import random
 
+###some config lines should be pasted every time
+import os
+import tensorflow as tf
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
+config = tf.ConfigProto()
+config.gpu_options.allow_growth=True
+sess = tf.Session(config=config)
+
+
 #learner = Unet25('','','','','','','','')
 FLAGS_train             = 1
 FLAGS_train_data_dir    = 'aapm_journal_localtest/Small/Hdf5-channel-last/train'
