@@ -10,9 +10,13 @@ from AutoSeg.Dicom.image_constants import *
 
 from AutoSeg.Models.metrics import *
 
+import keras.backend as K
+
+
 
 IMG_ROWS = RE_SIZE
 IMG_COLS = RE_SIZE
+
 
 
 def _shortcut(_input, residual):
@@ -60,7 +64,8 @@ def inception_block(inputs, depth, batch_mode=0, splitted=False, activation='rel
     p4_1 = MaxPooling2D(pool_size=(3, 3), strides=(1, 1), padding='same')(inputs)
     c4_2 = Conv2D(depth / 8, (1, 1), kernel_initializer='he_normal', padding='same')(p4_1)
 
-    res = concatenate([c1_1, c2_3, c3_3, c4_2], axis=1)
+
+    res = concatenate([c1_1, c2_3, c3_3, c4_2], axis=-1)
     res = BatchNormalization(axis=1)(res)
     res = actv()(res)
     return res
@@ -94,7 +99,12 @@ def get_unet_inception_mod(optimizer):
     splitted = True
     act = 'elu'
 
-    inputs = Input((HYPER_VOLUME_FACTOR, IMG_ROWS, IMG_COLS), name='main_input')
+    if K.image_data_format() == 'channels_first':
+        input_shape = (HYPER_VOLUME_FACTOR, IMG_ROWS, IMG_COLS)
+    else:
+        input_shape = (IMG_ROWS, IMG_COLS, HYPER_VOLUME_FACTOR)
+
+    inputs = Input(shape = input_shape, name='main_input')
     conv1 = inception_block(inputs, 64, batch_mode=2, splitted=splitted, activation=act)
     # conv1 = inception_block(conv1, 32, batch_mode=2, splitted=splitted, activation=act)
 

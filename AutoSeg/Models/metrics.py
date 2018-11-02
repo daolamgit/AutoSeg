@@ -80,6 +80,44 @@ def cross_entropy_weighted_loss_by_samples( y_true, y_pred):
     :param y_pred:
     :return: a tensor of Batch, sum of all loss in 1 image
     '''
+    # Kt = K.permute_dimensions(y_true, (0, 3, 2, 1)) #swap class to end
+
+    # Kp = K.permute_dimensions(y_pred, (0, 3, 2, 1))
+    Kt  = K.reshape( y_true, (-1, N_CLASSES +1))
+
+    #print "Kt reshape", Kt.eval()
+
+    Kp  = K.reshape( y_pred, (-1, N_CLASSES +1))
+
+    #print N_CLASSES + 1
+    a = K.categorical_crossentropy(Kt, Kp, from_logits='True')
+
+    #print "Cross entropy", a.eval()
+    class_weight = K.constant( np.asarray( LOSS_WEIGHTS, dtype=np.float32).reshape(-1,1))
+    weight_map      = K.dot( Kp, class_weight)
+
+    map_loss =  a * weight_map
+    #print "map_loss", map_loss.eval()
+
+    # weighted_loss = K.sum( K.reshape( map_loss, (-1, RE_SIZE * RE_SIZE)), axis = -1 )
+    weighted_loss = K.sum( map_loss)
+    # a = K.shape(weighted_loss)
+    #
+    # print "Weighted shape: ", a.eval()
+    # print "Weighted ", weighted_loss.eval()
+
+    return weighted_loss
+
+def cross_entropy_weighted_loss_by_samples_channel_first( y_true, y_pred):
+    '''
+    This function is a customed loss function with a parameter loss is outside of Keras scope.
+    The solution is passing a Global constants Weights and access them without having to think about how  to pass it.
+
+    This function return batch of loss, ie. works as a normal mini batch
+    :param y_true: 4D tensor B x C x H x W
+    :param y_pred:
+    :return: a tensor of Batch, sum of all loss in 1 image
+    '''
     Kt = K.permute_dimensions(y_true, (0, 3, 2, 1)) #swap class to end
 
     Kp = K.permute_dimensions(y_pred, (0, 3, 2, 1))
@@ -109,7 +147,7 @@ def cross_entropy_weighted_loss_by_samples( y_true, y_pred):
 
 
 def volume_accuracy(y_true, y_pred):
-    return K.mean( K.equal( K.argmax( y_true, axis= 1), K.argmax( y_pred, axis = 1)))
+    return K.mean( K.equal( K.argmax( y_true, axis = -1), K.argmax( y_pred, axis = -1)))
 
 
 # def volume_accuracy(y_true, y_pred):

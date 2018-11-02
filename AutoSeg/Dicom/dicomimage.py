@@ -7,6 +7,8 @@ import h5py
 
 from image_constants import *
 
+import keras.backend as K
+
 class Patient(object):
 
     def __init__(self,file_path):
@@ -52,6 +54,11 @@ class Patient(object):
         Hyper_volume    = np.zeros( (D-HYPER_VOLUME_FACTOR+1, HYPER_VOLUME_FACTOR, H, W),dtype=np.float32)
         for i in range( D-HYPER_VOLUME_FACTOR + 1):
             Hyper_volume[i] = array[i : i + HYPER_VOLUME_FACTOR]
+
+        #roll/move axis if channel last
+        if K.image_data_format() == 'channels_last':
+            Hyper_volume = np.moveaxis( Hyper_volume, 1, -1 )
+
         return Hyper_volume
 
     def create_volume(self):
@@ -294,18 +301,18 @@ if __name__ == '__main__':
     # output_path_train   = r'C:\Users\dlam\Data\aapm_journal\train'
     # output_path_test    = r'C:\Users\dlam\Data\aapm_journal\test'
 
-    # input_path_train    = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_shittest/Small/Dicom'
-    # input_path_test     = r'C:\Users\dlam\Data\raw_data_aapm\test offsite'
-    # output_path_train   = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_shittest/Small/Hdf5/train'
-    # output_path_test    = r'C:\Users\dlam\Data\aapm_journal\test'
+    input_path_train    = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_test/Small/Dicom/train'
+    input_path_test     = r'C:\Users\dlam\Data\raw_data_aapm\test offsite'
+    output_path_train   = r'/media/radonc/OS/Users/dlam/Data/aapm_journal_test/Small/Hdf5-channel-last/train'
+    output_path_test    = r'C:\Users\dlam\Data\aapm_journal\test'
 
-    input_path_train    = r'/media/radonc/OS/Users/dlam/Data/raw_data_aapm/train'
-    input_path_test     = r'/media/radonc/OS/Users/dlam/Data/raw_data_aapm/test onsite'
-    output_path_train   = r'/media/radonc/OS/Users/dlam/Data/aapm_journal/train'
-    output_path_test    = r'/media/radonc/OS/Users/dlam/Data/aapm_journal/test_onsite'
+    # input_path_train    = r'/media/radonc/OS/Users/dlam/Data/raw_data_aapm/train'
+    # input_path_test     = r'/media/radonc/OS/Users/dlam/Data/raw_data_aapm/test onsite'
+    # output_path_train   = r'/media/radonc/OS/Users/dlam/Data/aapm_journal/train'
+    # output_path_test    = r'/media/radonc/OS/Users/dlam/Data/aapm_journal/test_onsite'
 
-    FLAGS_train         = 0
-    FLAGS_test          = 1
+    FLAGS_train         = 1
+    FLAGS_test          = 0
 
     if not os.path.exists( output_path_train):
         os.makedirs( output_path_train)

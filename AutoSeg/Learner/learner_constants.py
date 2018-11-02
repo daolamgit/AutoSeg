@@ -2,9 +2,9 @@
 
 LOSS_WEIGHTS    = (1.0, 20.0, 2.0, 2.0, 20.0, 40.0)
 
-EPOCH           = 50
+EPOCH           = 100
 
-BATCH_SIZE      = 2 #small 50
+BATCH_SIZE      = 4 #small 50
 
 N_EPOCH_CHECK   = 10
 

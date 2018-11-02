@@ -10,6 +10,8 @@ from AutoSeg.Dicom.image_constants import *
 
 from keras.regularizers import l2
 
+import keras.backend as K
+
 from AutoSeg.Models.metrics import *
 
 from keras_contrib.applications.densenet import DenseNetFCN
@@ -21,8 +23,13 @@ IMG_COLS = RE_SIZE
 
 
 def densnet_func( optimizer):
-    model = DenseNetFCN( (5, RE_SIZE, RE_SIZE),
-                                nb_dense_block = 4, nb_layers_per_block= [ 3, 4, 5, 6, 6],
+    if K.image_data_format() == 'channels_first':
+        input_shape = (HYPER_VOLUME_FACTOR, IMG_ROWS, IMG_COLS)
+    else:
+        input_shape = (IMG_ROWS, IMG_COLS, HYPER_VOLUME_FACTOR)
+
+    model = DenseNetFCN( input_shape = input_shape,
+                                nb_dense_block = 4, nb_layers_per_block= [ 1, 2, 5, 6, 6],
                                  upsampling_type= 'deconv', classes = N_CLASSES + 1)
 
     model.compile(optimizer=optimizer,

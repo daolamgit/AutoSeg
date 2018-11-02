@@ -8,6 +8,7 @@ from skimage import measure
 from transforms3d.euler import euler2mat
 from transforms3d.affines import compose
 
+import keras.backend as K
 
 class Patient_Train(object):
     def __init__(self, file, roi, im_size):
@@ -58,6 +59,10 @@ class Patient_Train(object):
 
             #the labels will be several binary planes ,with plane 0 is the background
             final_labels[:,0] = np.amax( final_labels[:, 1:,], axis = 1) == 0
+
+            #move axis if channel last
+            if K.image_data_format()  == 'channels_last':
+                final_labels = np.moveaxis( final_labels, 1, -1)
 
         else: #fine tune
             pass

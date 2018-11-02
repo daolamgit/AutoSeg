@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e530c90-ec1e-44fb-a18b-7dcd12f2e659" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/AutoSeg/Models/keras_contrib_fix.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aapm_journal_localtest/Small/Hdf5/test/LCTSC-Train-S3-001.hdf5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aapm_journal_localtest/Small/Hdf5/train/LCTSC-Train-S1-001.hdf5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aapm_journal_localtest/Small/Hdf5/train/LCTSC-Train-S2-001.hdf5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aapm_journal_localtest/Small/Hdf5/train/LCTSC-Train-S3-001.hdf5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/aapm_journal_localtest/Small/Hdf5/train/files.log" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AutoSeg/Dicom/dicomimage.py" afterPath="$PROJECT_DIR$/AutoSeg/Dicom/dicomimage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AutoSeg/Dicom/hdf5image.py" afterPath="$PROJECT_DIR$/AutoSeg/Dicom/hdf5image.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AutoSeg/Dicom/image_constants.py" afterPath="$PROJECT_DIR$/AutoSeg/Dicom/image_constants.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AutoSeg/Learner/learner_constants.py" afterPath="$PROJECT_DIR$/AutoSeg/Learner/learner_constants.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AutoSeg/Models/Dense_model.py" afterPath="$PROJECT_DIR$/AutoSeg/Models/Dense_model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AutoSeg/Models/Unet25_model.py" afterPath="$PROJECT_DIR$/AutoSeg/Models/Unet25_model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AutoSeg/Models/metrics.py" afterPath="$PROJECT_DIR$/AutoSeg/Models/metrics.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_train.py" afterPath="$PROJECT_DIR$/main_train.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/train.txt" afterPath="$PROJECT_DIR$/train.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/validation.txt" afterPath="$PROJECT_DIR$/validation.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,10 +32,46 @@
       <file leaf-file-name="learner.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AutoSeg/Learner/learner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="74" column="34" lean-forward="true" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+            <state relative-caret-position="2790">
+              <caret line="201" column="32" lean-forward="false" selection-start-line="201" selection-start-column="27" selection-end-line="201" selection-end-column="32" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hdf5image.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AutoSeg/Dicom/hdf5image.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1035">
+              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dense_model.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AutoSeg/Models/Dense_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="525">
+              <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="densenet.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras_contrib/applications/densenet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15105">
+              <caret line="1007" column="0" lean-forward="false" selection-start-line="1007" selection-start-column="0" selection-end-line="1007" selection-end-column="0" />
+              <folding>
+                <element signature="e#2585#2622#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -31,8 +80,8 @@
       <file leaf-file-name="main_train.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="1065">
+              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -40,61 +89,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ops.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/framework/ops.py">
+      <file leaf-file-name="metrics.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AutoSeg/Models/metrics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50220">
-              <caret line="3391" column="0" lean-forward="false" selection-start-line="3391" selection-start-column="0" selection-end-line="3391" selection-end-column="0" />
+            <state relative-caret-position="1980">
+              <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="op_def_library.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py">
+      <file leaf-file-name="learner_constants.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AutoSeg/Learner/learner_constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11550">
-              <caret line="786" column="0" lean-forward="false" selection-start-line="786" selection-start-column="0" selection-end-line="786" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gen_array_ops.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/ops/gen_array_ops.py">
+      <file leaf-file-name="dicomimage.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AutoSeg/Dicom/dicomimage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91425">
-              <caret line="6112" column="0" lean-forward="false" selection-start-line="6112" selection-start-column="0" selection-end-line="6112" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="870">
+              <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <element signature="e#2917#3739#0" expanded="false" />
+                <element signature="e#5058#5320#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tensorflow_backend.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="1906" column="0" lean-forward="false" selection-start-line="1906" selection-start-column="0" selection-end-line="1906" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="control_flow_ops.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/ops/control_flow_ops.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="1927" column="48" lean-forward="false" selection-start-line="1927" selection-start-column="48" selection-end-line="1927" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="normalization.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="normalization.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/layers/normalization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+            <state relative-caret-position="780">
+              <caret line="61" column="25" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -160,7 +193,6 @@
         <option value="$PROJECT_DIR$/AutoSeg/main.py" />
         <option value="$PROJECT_DIR$/AutoSeg/Models/Unet25.py" />
         <option value="$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/utils/generic_utils.py" />
-        <option value="$PROJECT_DIR$/AutoSeg/Dicom/hdf5image.py" />
         <option value="$PROJECT_DIR$/keras_backend.py" />
         <option value="$PROJECT_DIR$/test_masks.py" />
         <option value="$PROJECT_DIR$/note.txt.py" />
@@ -169,7 +201,6 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/scripting.py" />
         <option value="$PROJECT_DIR$/main_test.py" />
-        <option value="$PROJECT_DIR$/AutoSeg/Dicom/dicomimage.py" />
         <option value="$PROJECT_DIR$/AutoSeg/Dicom/distance_metrics.py" />
         <option value="$PROJECT_DIR$/AutoSeg/Learner/learner.py" />
         <option value="$PROJECT_DIR$/main_test_onsite.py" />
@@ -180,24 +211,26 @@
         <option value="$PROJECT_DIR$/AutoSeg/Dicom/score end.txt" />
         <option value="$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras_contrib/layers/recurrent.py" />
         <option value="$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/losses.py" />
-        <option value="$PROJECT_DIR$/AutoSeg/Models/metrics.py" />
         <option value="$PROJECT_DIR$/AutoSeg/Models/densent_test.py" />
-        <option value="$PROJECT_DIR$/AutoSeg/Models/Unet25_model.py" />
-        <option value="$PROJECT_DIR$/AutoSeg/Models/Dense_model.py" />
-        <option value="$PROJECT_DIR$/AutoSeg/Dicom/image_constants.py" />
-        <option value="$PROJECT_DIR$/AutoSeg/Learner/learner_constants.py" />
         <option value="$PROJECT_DIR$/AutoSeg/Models/keras_contrib_fix.py" />
         <option value="$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras_contrib/applications/densenet.py" />
+        <option value="$PROJECT_DIR$/AutoSeg/Models/Unet25_model.py" />
+        <option value="$PROJECT_DIR$/AutoSeg/Dicom/dicomimage.py" />
         <option value="$PROJECT_DIR$/main_train.py" />
         <option value="$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py" />
+        <option value="$PROJECT_DIR$/AutoSeg/Models/Dense_model.py" />
+        <option value="$PROJECT_DIR$/AutoSeg/Dicom/image_constants.py" />
+        <option value="$PROJECT_DIR$/AutoSeg/Dicom/hdf5image.py" />
+        <option value="$PROJECT_DIR$/AutoSeg/Models/metrics.py" />
+        <option value="$PROJECT_DIR$/AutoSeg/Learner/learner_constants.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="31" />
-    <option name="y" value="-3" />
-    <option name="width" value="1569" />
-    <option name="height" value="903" />
+    <option name="y" value="20" />
+    <option name="width" value="869" />
+    <option name="height" value="964" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -216,7 +249,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -313,6 +345,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -530,17 +563,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="31" y="-3" width="1569" height="903" extended-state="6" />
+    <frame x="31" y="20" width="869" height="964" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14734773" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29020557" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39873418" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28734177" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.327654" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3379747" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31772152" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="41" y="250" width="1239" height="547" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3372503" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35370153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="41" y="250" width="1239" height="547" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942164" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -564,12 +597,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/AutoSeg/Dicom/dicomimage.py</url>
-          <line>267</line>
+          <line>274</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/AutoSeg/Dicom/dicomimage.py</url>
-          <line>330</line>
+          <line>337</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -578,19 +611,9 @@
           <option name="timeStamp" value="101" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AutoSeg/Learner/learner.py</url>
-          <line>73</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_masks.py</url>
           <line>32</line>
           <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AutoSeg/Dicom/hdf5image.py</url>
-          <line>59</line>
-          <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/AutoSeg/Dicom/rt_structures_test.py</url>
@@ -644,11 +667,6 @@
           <option name="timeStamp" value="229" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main_train.py</url>
-          <line>34</line>
-          <option name="timeStamp" value="230" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/AutoSeg/Models/densent_test.py</url>
           <line>83</line>
           <option name="timeStamp" value="242" />
@@ -689,29 +707,59 @@
           <option name="timeStamp" value="253" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py</url>
-          <line>1907</line>
-          <option name="timeStamp" value="256" />
+          <url>file://$PROJECT_DIR$/main_train.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="263" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/layers/normalization.py</url>
-          <line>141</line>
-          <option name="timeStamp" value="258" />
+          <url>file://$PROJECT_DIR$/main_train.py</url>
+          <line>71</line>
+          <option name="timeStamp" value="270" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/layers/normalization.py</url>
-          <line>144</line>
-          <option name="timeStamp" value="259" />
+          <url>file://$PROJECT_DIR$/main_train.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="271" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/layers/normalization.py</url>
-          <line>146</line>
-          <option name="timeStamp" value="260" />
+          <url>file://$PROJECT_DIR$/AutoSeg/Learner/learner.py</url>
+          <line>59</line>
+          <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py</url>
-          <line>1906</line>
-          <option name="timeStamp" value="261" />
+          <url>file://$PROJECT_DIR$/AutoSeg/Models/Dense_model.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="274" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras_contrib/applications/densenet.py</url>
+          <line>412</line>
+          <option name="timeStamp" value="275" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras_contrib/applications/densenet.py</url>
+          <line>997</line>
+          <option name="timeStamp" value="276" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AutoSeg/Models/metrics.py</url>
+          <line>96</line>
+          <option name="timeStamp" value="277" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AutoSeg/Models/metrics.py</url>
+          <line>149</line>
+          <option name="timeStamp" value="278" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras_contrib/applications/densenet.py</url>
+          <line>1007</line>
+          <option name="timeStamp" value="279" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/AutoSeg/Dicom/hdf5image.py</url>
+          <line>64</line>
+          <option name="timeStamp" value="280" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -724,30 +772,15 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="262" />
+      <option name="time" value="281" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/dicom/filewriter.py" />
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/pydicom/filereader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="780" column="4" lean-forward="false" selection-start-line="780" selection-start-column="4" selection-end-line="780" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/pydicom/dataset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="475" column="0" lean-forward="false" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="1017" column="0" lean-forward="false" selection-start-line="1017" selection-start-column="0" selection-end-line="1017" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -895,16 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AutoSeg/Dicom/hdf5image.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AutoSeg/Dicom/validation.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -926,34 +949,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AutoSeg/Dicom/dicomimage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="85" column="8" lean-forward="false" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <element signature="e#2733#3555#0" expanded="false" />
-            <element signature="e#4874#5136#0" expanded="false" />
-            <element signature="e#5891#6253#0" expanded="false" />
-            <element signature="e#6296#7604#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AutoSeg/Models/Unet25_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1245">
-          <caret line="93" column="19" lean-forward="true" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/keras/_impl/keras/engine/training.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243">
-          <caret line="1354" column="49" lean-forward="false" selection-start-line="1354" selection-start-column="49" selection-end-line="1354" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -988,27 +984,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AutoSeg/Models/metrics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras_contrib/applications/densenet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="1008" column="13" lean-forward="true" selection-start-line="1008" selection-start-column="13" selection-end-line="1008" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AutoSeg/Learner/learner_constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AutoSeg/Models/keras_contrib_fix.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1016,33 +991,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AutoSeg/Models/Dense_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AutoSeg/Dicom/image_constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/framework/ops.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50220">
-          <caret line="3391" column="0" lean-forward="false" selection-start-line="3391" selection-start-column="0" selection-end-line="3391" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11550">
           <caret line="786" column="0" lean-forward="false" selection-start-line="786" selection-start-column="0" selection-end-line="786" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,27 +1002,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91425">
           <caret line="6112" column="0" lean-forward="false" selection-start-line="6112" selection-start-column="0" selection-end-line="6112" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AutoSeg/Learner/learner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="74" column="34" lean-forward="true" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,7 +1009,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,22 +1016,150 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="1927" column="48" lean-forward="false" selection-start-line="1927" selection-start-column="48" selection-end-line="1927" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py">
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/layers/convolutional.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="1906" column="0" lean-forward="false" selection-start-line="1906" selection-start-column="0" selection-end-line="1906" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="2242">
+          <caret line="456" column="8" lean-forward="false" selection-start-line="456" selection-start-column="8" selection-end-line="456" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/engine/input_layer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="113" column="4" lean-forward="false" selection-start-line="113" selection-start-column="4" selection-end-line="113" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/layers/normalization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="146" column="0" lean-forward="false" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+        <state relative-caret-position="780">
+          <caret line="61" column="25" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoSeg/Models/Unet25_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="102" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3445">
+          <caret line="1564" column="19" lean-forward="true" selection-start-line="1564" selection-start-column="19" selection-end-line="1564" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/framework/ops.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="5992" column="0" lean-forward="false" selection-start-line="5992" selection-start-column="0" selection-end-line="5992" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoSeg/Dicom/image_constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras/backend/tensorflow_backend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="1922" column="27" lean-forward="true" selection-start-line="1922" selection-start-column="27" selection-end-line="1922" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoSeg/Dicom/dicomimage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#2917#3739#0" expanded="false" />
+            <element signature="e#5058#5320#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/keras_contrib/applications/densenet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15105">
+          <caret line="1007" column="0" lean-forward="false" selection-start-line="1007" selection-start-column="0" selection-end-line="1007" selection-end-column="0" />
+          <folding>
+            <element signature="e#2585#2622#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoSeg/Dicom/hdf5image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda2/lib/python2.7/site-packages/tensorflow/python/keras/_impl/keras/engine/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="1335" column="6" lean-forward="false" selection-start-line="1335" selection-start-column="6" selection-end-line="1335" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoSeg/Learner/learner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2790">
+          <caret line="201" column="32" lean-forward="false" selection-start-line="201" selection-start-column="27" selection-end-line="201" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoSeg/Models/Dense_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoSeg/Models/metrics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoSeg/Learner/learner_constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>

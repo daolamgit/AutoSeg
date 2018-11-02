@@ -12,11 +12,11 @@ import random
 
 #learner = Unet25('','','','','','','','')
 FLAGS_train             = 1
-# FLAGS_train_data_dir    = 'aapm_journal_localtest/Small/Hdf5/train'
-# FLAGS_test_data_dir     = 'aapm_journal_localtest/Small/Hdf5/train'
+FLAGS_train_data_dir    = 'aapm_journal_localtest/Small/Hdf5-channel-last/train'
+FLAGS_test_data_dir     = 'aapm_journal_localtest/Small/Hdf5-channel-last/train'
 
-FLAGS_train_data_dir    = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
-FLAGS_test_data_dir     = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
+# FLAGS_train_data_dir    = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
+# FLAGS_test_data_dir     = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
 
 FLAGS_checkpoint_dir    = 'checkpoint1'
 FLAGS_log_dir           = 'logs1'
