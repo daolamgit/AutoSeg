@@ -11,11 +11,14 @@ FLAGS_train             = 0
 # FLAGS_train_data_dir    = 'aapm_journal_localtest/Small/Hdf5/train'
 # FLAGS_test_data_dir     = 'aapm_journal_localtest/Small/Hdf5/train'
 
-FLAGS_train_data_dir    = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
-FLAGS_test_data_dir     = '/media/radonc/OS/Users/dlam/Data/aapm_journal/test' #hdf5
+# FLAGS_train_data_dir    = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
+# FLAGS_test_data_dir     = '/media/radonc/OS/Users/dlam/Data/aapm_journal/test' #hdf5
 
-FLAGS_checkpoint_dir    = 'checkpoint'
-FLAGS_log_dir           = 'logs'
+FLAGS_train_data_dir    = 'Data/Hdf5-channels-last/train'
+FLAGS_test_data_dir     = 'Data/Hdf5-channels-last/test'
+
+FLAGS_checkpoint_dir    = 'checkpoint3'
+FLAGS_log_dir           = 'logs3'
 
 def main():
 
@@ -46,7 +49,7 @@ def main():
     if not os.path.exists( FLAGS_log_dir):
         os.makedirs( FLAGS_log_dir)
 
-    model = imp.load_source('model', 'AutoSeg/Models/Unet25_model.py')
+    model = imp.load_source('model', 'AutoSeg/Models/Dense_model.py')
     model_func = model.get_unet
 
     learner_all = Unet25(checkpoint_dir= FLAGS_checkpoint_dir, log_dir = FLAGS_log_dir,

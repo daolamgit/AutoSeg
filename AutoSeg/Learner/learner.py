@@ -71,6 +71,8 @@ class Unet25( object):
         if self.train_model_name: #resume training from some previous training
             self.model = load_model( os.path.join( self.checking_dir, self.roi[1], self.train_model_name))
 
+        print self.model.summary()
+
         for epoch in range(EPOCH):
             print "Epoch: ", epoch
             training_paths = np.random.permutation( self.training_paths)
@@ -89,7 +91,7 @@ class Unet25( object):
             score_train /= len(training_paths)
             score_ent   /= len(training_paths)
             print "Epoch score train is ", score_ent, score_train
-            with open('train.txt', 'a') as file_train:
+            with open( os.path.join(self.log_dir, 'train.txt'), 'a') as file_train:
                 file_train.write('%f, %f\n' % (score_ent, score_train))
 
             #####Valiation after each epoch#######
@@ -110,7 +112,7 @@ class Unet25( object):
                 score_ent /= len( self.testing_paths)
                 print "Epoch score validation is ", score_ent, score_val
 
-                with open('validation.txt', 'a') as file_val:
+                with open(os.path.join(self.log_dir, 'validation.txt'), 'a') as file_val:
                     file_val.write('%f, %f\n' % (score_ent, score_val))
 
                 if score_val > self.best_val_score: #save the current best model

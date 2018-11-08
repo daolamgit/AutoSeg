@@ -29,7 +29,7 @@ def densnet_func( optimizer):
         input_shape = (IMG_ROWS, IMG_COLS, HYPER_VOLUME_FACTOR)
 
     model = DenseNetFCN( input_shape = input_shape,
-                                nb_dense_block = 4, nb_layers_per_block= [ 1, 2, 5, 6, 6],
+                                nb_dense_block = 4, nb_layers_per_block= [ 3, 4, 5, 6, 6],
                                  upsampling_type= 'deconv', classes = N_CLASSES + 1)
 
     model.compile(optimizer=optimizer,
