@@ -116,10 +116,14 @@ class Unet25( object):
                     file_val.write('%f, %f\n' % (score_ent, score_val))
 
                 if score_val > self.best_val_score: #save the current best model
-                     model_name = "best_val_score_model.hdf5"
-                     filepath = os.path.join(self.checking_dir, self.roi[1], model_name)
-                     print "Saving best validation model", filepath
-                     self.model.save( filepath, overwrite = True)
+                    #update
+                    self.best_val_score = score_val
+                    model_name = "best_val_score_model.hdf5"
+                    filepath = os.path.join(self.checking_dir, self.roi[1], model_name)
+                    print "Saving best validation model", filepath
+                    self.model.save( filepath, overwrite = True)
+
+
 
             #save checkpoint every N_EPOCH_CHECK
             if np.mod( epoch, N_EPOCH_CHECK)==0:
@@ -165,7 +169,9 @@ class Unet25( object):
         Hyper_volume = (Hyper_volume - self.mean) / self.std
 
         Size        = Hyper_volume.shape
-        Masks       = np.zeros( (Size[0], self.nclass, Size[2], Size[3]))
+        # Masks       = np.zeros( (Size[0], self.nclass, Size[2], Size[3]))
+        Masks       = np.zeros(( Size[0], Size[1], Size[2], self.nclass))
+        print Masks.shape
         B = len(Hyper_volume) // BATCH_SIZE
 
         for b in range( B):

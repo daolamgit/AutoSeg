@@ -30,8 +30,8 @@ FLAGS_test_data_dir     = 'Data/Hdf5-channels-last/train'
 # FLAGS_train_data_dir    = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
 # FLAGS_test_data_dir     = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
 
-FLAGS_checkpoint_dir    = 'checkpoint3'
-FLAGS_log_dir           = 'logs3'
+FLAGS_checkpoint_dir    = 'checkpoint4'
+FLAGS_log_dir           = 'logs4'
 
 def main():
 
@@ -42,7 +42,7 @@ def main():
             with open( os.path.join( FLAGS_train_data_dir, 'files.log'), 'r') as f:
                 training_paths, testing_paths = pickle.load(f)
         else:
-            all_subjects    = [ os.path.join( FLAGS_train_data_dir, name) for name in os.listdir( FLAGS_train_data_dir)]
+            all_subjects    = sorted([ os.path.join( FLAGS_train_data_dir, name) for name in os.listdir( FLAGS_train_data_dir)])
 
             np.random.seed(1)
             all_subjects            = np.random.permutation( ( all_subjects))

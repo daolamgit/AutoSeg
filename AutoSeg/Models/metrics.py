@@ -90,11 +90,11 @@ def cross_entropy_weighted_loss_by_samples( y_true, y_pred):
     Kp  = K.reshape( y_pred, (-1, N_CLASSES +1))
 
     #print N_CLASSES + 1
-    a = K.categorical_crossentropy(Kt, Kp, from_logits= True)
+    a = K.categorical_crossentropy(Kt, Kp, from_logits= False)
 
     #print "Cross entropy", a.eval()
     class_weight = K.constant( np.asarray( LOSS_WEIGHTS, dtype=np.float32).reshape(-1,1))
-    weight_map      = K.dot( Kp, class_weight)
+    weight_map      = K.dot( Kt, class_weight)
     #
     # ll = K.eval( weight_map)
     # print ll.shape
