@@ -71,7 +71,7 @@ def main():
     else:
         learner_all.test()
 
-    print ('Result is good')
+    # print ('Result is good')
 
 if __name__ == '__main__':
     main()

@@ -20,18 +20,20 @@ sess = tf.Session(config=config)
 
 
 #learner = Unet25('','','','','','','','')
-FLAGS_train             = 1
+FLAGS_train             = 0
 # FLAGS_train_data_dir    = 'aapm_journal_localtest/Small/Hdf5-channel-last/train'
 # FLAGS_test_data_dir     = 'aapm_journal_localtest/Small/Hdf5-channel-last/train'
 
-FLAGS_train_data_dir    = 'Data/Hdf5-channels-last/train'
-FLAGS_test_data_dir     = 'Data/Hdf5-channels-last/train'
+# FLAGS_train_data_dir    = 'Data/Hdf5-channels-last/train'
+# FLAGS_test_data_dir     = 'Data/Hdf5-channels-last/train'
 
-# FLAGS_train_data_dir    = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
-# FLAGS_test_data_dir     = '/media/radonc/OS/Users/dlam/Data/aapm_journal/train' #hdf5
+# FLAGS_checkpoint_dir    = 'checkpoint5'
+# FLAGS_log_dir           = 'logs5'
 
-FLAGS_checkpoint_dir    = 'checkpoint4'
-FLAGS_log_dir           = 'logs4'
+FLAGS_train_data_dir    = 'Data/Hdf5-SegThor-channels-last/train'
+FLAGS_test_data_dir     = 'Data/Hdf5-SegThor-channels-last/test'
+FLAGS_checkpoint_dir    = 'checkpoint_SegThor'
+FLAGS_log_dir           = 'logs_SegThor'
 
 def main():
 
@@ -44,8 +46,9 @@ def main():
         else:
             all_subjects    = sorted([ os.path.join( FLAGS_train_data_dir, name) for name in os.listdir( FLAGS_train_data_dir)])
 
-            np.random.seed(1)
-            all_subjects            = np.random.permutation( ( all_subjects))
+            #when testing don't do hard things
+            #np.random.seed(1)
+            #all_subjects            = np.random.permutation( ( all_subjects))
             #all_subjects    = all_subjects[perm]
 
             n_training      = int( len(all_subjects) * 2 /3)
@@ -56,8 +59,8 @@ def main():
 
     else:
         if not FLAGS_train:
-            training_paths  = [ name for name in glob.glob( os.path.join( FLAGS_train_data_dir, '*.hdf5'))]
-            testing_paths   = [ name for name in glob.glob( os.path.join( FLAGS_test_data_dir, '*.hdf5'))]
+            training_paths  = sorted([ name for name in glob.glob( os.path.join( FLAGS_train_data_dir, '*.hdf5'))])
+            testing_paths   = sorted([ name for name in glob.glob( os.path.join( FLAGS_test_data_dir, '*.hdf5'))])
         else: #train and test together, not recommend
             raise ValueError ('Not recommend for prototype because train and test together is at the submission only')
 
@@ -86,7 +89,7 @@ def main():
     else:
         learner_all.test()
 
-    print ('Result is good')
+    # print ('Result is good')
 
 if __name__ == '__main__':
     main()

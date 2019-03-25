@@ -1,7 +1,15 @@
 #python main_train.py
-python main_test.py
+#python main_test.py
+
+#cd AutoSeg/Dicom
+#python Mask2Contour.py
+
+#python structure_comparison
+
 
 cd AutoSeg/Dicom
-python Mask2Contour.py
+python2 niimage.py
+cd ../..
+python2 main_train_gpu1.py
 
-python structure_comparison
+python2 SegThor_submit.py
