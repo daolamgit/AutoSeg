@@ -5,3 +5,5 @@
 aapm_journal_localtest/
 .idea/
 Data/
+logs*/
+checkpoint*/

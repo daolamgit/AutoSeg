@@ -195,7 +195,10 @@ if __name__ == '__main__':
             print ValueError
 
         mask_prob = f['Masks_predict']
-        mask = np.argmax(mask_prob, axis=1)
+        if CHANNELS_LAST:
+            mask = np.argmax(mask_prob, axis=-1)
+        else:
+            mask = np.argmax(mask_prob, axis=1)
 
         gt_rs_file = ''
         for subdir, dirs, files in os.walk( sub):

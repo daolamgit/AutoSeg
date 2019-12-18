@@ -9,3 +9,5 @@ RE_SIZE                     = 208 #48 #208 # Resize to 72, 256, 256 then crop to
 CROP                        = 24 #8 #24
 
 N_CLASSES                   = 5
+
+CHANNELS_LAST                = 1
